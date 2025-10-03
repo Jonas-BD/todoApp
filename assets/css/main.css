@@ -1,0 +1,122 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -55%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+body {
+  padding: 0;
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  background-color: #e0e0e0;
+  color: #000000;
+}
+
+#todoHeader {
+  background-color: #ffffff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+#todoHeader button {
+  background-color: #ffffff;
+  border: none;
+  width: 50px;
+  height: 50px;
+  margin: 0 1rem;
+}
+#todoHeader .backButton img {
+  width: 30px;
+  height: 30px;
+}
+
+#newButton {
+  background-color: transparent;
+  position: fixed;
+  border: none;
+  width: 85px;
+  height: 85px;
+  right: 20px;
+  bottom: 20px;
+}
+
+section {
+  background-color: #e0e0e0;
+}
+section .list {
+  display: flex;
+  background-color: #ffffff;
+  margin: 1rem;
+  padding: 1rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+section .list h2 {
+  margin-right: auto;
+  width: 70%;
+}
+section .list button {
+  background-color: #ffffff;
+  border: none;
+}
+section .list button img {
+  width: 30px;
+  height: 30px;
+}
+
+#overlay {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 6px 24px rgba(0, 0, 0, 0.15);
+  z-index: 1000;
+  width: 90%;
+  max-width: 400px;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in-out;
+}
+#overlay h2 {
+  margin-bottom: 1rem;
+  font-size: 1.8rem;
+  color: #000000;
+  font-weight: bold;
+}
+#overlay input {
+  width: 90%;
+  padding: 12px;
+  margin-bottom: 1rem;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  font-size: 1rem;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.3s ease;
+}
+#overlay input:focus {
+  border-color: #5cb8ff;
+  outline: none;
+}
+#overlay button {
+  padding: 10px 20px;
+  margin: 10px 5px;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+#overlay button:last-of-type {
+  background-color: #f44336;
+  color: #ffffff;
+  font-weight: bold;
+}
+#overlay button:last-of-type:hover {
+  background-color: gray;
+}/*# sourceMappingURL=main.css.map */

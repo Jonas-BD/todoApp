@@ -1,0 +1,31 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: $font-family;
+    background-color: $PMlightgray;
+    color: $PMblack;
+}
+
+#todoHeader {
+    @include header;
+    button {
+        @include headerButton;
+    }
+    .backButton img {
+        width: 30px;
+        height: 30px;
+    }
+}
+
+#newButton {
+    background-color: transparent;
+    position: fixed;
+    border: none;
+    width: 85px;
+    height: 85px;
+    right: 20px;
+    bottom: 20px;
+}

@@ -1,0 +1,211 @@
+:root {
+    --maincolor: #E0E0E0;
+    --blue: #5cb8ff;
+}
+
+html {
+    scroll-behavior: smooth;
+    font-family: sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-color: var(--maincolor);
+    color: #000000;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+}
+
+#menuButton {
+    background-image: url(../Icons/menu.svg);
+    background-color: white;
+    border: none;
+    width: 50px;
+    height: 50px;
+}
+
+.backButton {
+    background-color: white;
+    border: none;
+}
+.backButton img {
+    width: 30px;
+    height: 30px;
+}
+
+section {
+    background-color: var(--maincolor);
+}
+#newButton {
+    background-image: url(../Icons/plus.svg);
+    background-color: transparent;
+    position: fixed;
+    border: none;
+    width: 85px;
+    height: 85px;
+    right: 20px;
+    bottom: 20px;
+}
+
+.list {
+    display: flex;
+    background-color: white;
+    margin: 10px;
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.list h2 {
+    margin-right: auto;
+    width: 70%;
+}
+.list button {
+    background-color: white;
+    border: none;
+}
+.list button img {
+    width: 30px;
+    height: 30px;
+}
+
+.item-done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 1.8;
+}
+
+#overlay {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2), 0 6px 24px rgba(0, 0, 0, 0.15);
+    z-index: 1000;
+    width: 90%;
+    max-width: 400px;
+    text-align: center;
+    animation: fadeIn 0.3s ease-out;
+}
+
+#overlay h2 {
+    margin-bottom: 15px;
+    font-size: 1.8rem;
+    color: #333;
+    font-weight: bold;
+}
+
+#overlay input {
+    width: 90%;
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.05);
+    transition: border-color 0.3s ease;
+}
+
+#overlay input:focus {
+    border-color: var(--blue);
+    outline: none;
+    box-shadow: 0 0 5px rgba(92, 184, 255, 0.5);
+}
+
+#overlay button {
+    padding: 12px 25px;
+    margin: 10px 5px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#overlay button:first-child {
+    background-color: var(--blue);
+    color: white;
+    font-weight: bold;
+}
+
+#overlay button:first-child:hover {
+    background-color: #4aa3e6;
+    transform: scale(1.05);
+}
+
+#overlay button:last-child {
+    background-color: #f44336;
+    color: white;
+    font-weight: bold;
+}
+
+#overlay button:last-child:hover {
+    background-color: #d32f2f;
+    transform: scale(1.05);
+}
+
+/* Fade-in animation for smooth appearance */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -55%);
+    }
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+.theme-switch {
+    position: relative;
+    width: 60px;
+    height: 34px;
+    display: inline-block;
+}
+
+.theme-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "☀️"; /* Sol som default */
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    transition: .4s;
+}
+
+input:checked + .slider {
+    background-color: var(--blue);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+    content: "🌙"; /* Måne i dark mode */
+}

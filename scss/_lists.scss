@@ -1,0 +1,21 @@
+@use 'variables' as *;
+@use 'mixins' as *;
+
+section {
+    background-color: $PMlightgray;
+    .list {
+        @include lists;
+    & h2 {
+        margin-right: auto;
+        width: 70%;
+    }
+    & button {
+        background-color: $PMwhite;
+        border: none;
+    }
+    & button img {
+        width: 30px;
+        height: 30px;
+    }
+    }
+}
