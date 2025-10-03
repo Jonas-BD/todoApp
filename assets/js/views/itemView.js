@@ -1,7 +1,7 @@
 import { state } from "../utils/state.js";
 import { todoApp, todoHeader } from "../index.js";
 import { listClickCallback } from "../callbacks/clickCallback.js";
-import { newCallBack } from "../callbacks/newClickCallback.js";
+import { listView } from "./listView.js";
 
 export function listItemView() {
     state.appState = "itemView";
