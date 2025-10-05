@@ -2,6 +2,7 @@ import { state } from "../utils/state.js";
 import { todoApp, todoHeader } from "../index.js";
 import { listClickCallback } from "../callbacks/clickCallback.js";
 import { listView } from "./listView.js";
+import { newCallBack } from "../callbacks/newClickCallback.js";
 
 export function listItemView() {
     state.appState = "itemView";
@@ -18,8 +19,10 @@ export function listItemView() {
     } else {
         list.items.forEach((item,index) => {
             const listElement = document.createElement('div');
-            listElement.className = 'list';
-            const itemClass = item.done ? 'item-done' : '';
+            listElement.classList.add('list')
+            if (item.done) {
+                listElement.classList.add('item-done');
+            };
             
             const title = document.createElement('h2');
             title.textContent = item.name;
@@ -45,7 +48,7 @@ export function listItemView() {
     divBack.className = 'backButton';
     divBack.innerHTML = `<img src="assets/Icons/back.svg" alt="Back">`;
     divBack.addEventListener('click', () => {
-        appState = "listView";
+        state.appState = "listView";
         listView();
     });
     todoHeader.appendChild(divBack);

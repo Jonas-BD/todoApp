@@ -44,6 +44,12 @@ body {
   bottom: 20px;
 }
 
+.item-done {
+  text-decoration: line-through;
+  color: gray;
+  opacity: 1.8;
+}
+
 section {
   background-color: #e0e0e0;
 }

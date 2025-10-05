@@ -1,7 +1,7 @@
 import { state } from '../utils/state.js';
 import { showOverlay } from '../views/overlay.js';
 
-export function newClickCallback() {
+export function newCallBack() {
     switch (state.appState) {
         case 'listView':
             console.log('Du er ved at lave en liste i '+state.appState);

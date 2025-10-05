@@ -1,6 +1,7 @@
 import { state } from "../utils/state.js";
 import { todoApp, todoHeader } from "../index.js";
 import { listClickCallback } from "../callbacks/clickCallback.js";
+import { newCallBack } from "../callbacks/newClickCallback.js"
 
 export function listView() {
     console.log()

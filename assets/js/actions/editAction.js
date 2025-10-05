@@ -1,4 +1,7 @@
+import { state } from "../utils/state.js";
 import { saveData } from "../utils/storage.js";
+import { listView } from "../views/listView.js";
+import { listItemView } from "../views/itemView.js";
 
 export function editFunction(index, type) {
     const overlay = document.createElement('div');
@@ -9,7 +12,7 @@ export function editFunction(index, type) {
     overlay.appendChild(overlayTitle);
     const input = document.createElement('input');
     input.type = 'text';
-    input.value = type === 'list' ? currentData.lists[index].name : currentData.lists[activeList].items[index].name;
+    input.value = type === 'list' ? state.currentData.lists[index].name : state.currentData.lists[state.activeList].items[index].name;
     overlay.appendChild(input);
 
     const saveBtn = document.createElement('button');
@@ -18,11 +21,11 @@ export function editFunction(index, type) {
         const inputValue = input.value;
         if (inputValue) {
             if (type === 'list') {
-                currentData.lists[index].name = inputValue;
+                state.currentData.lists[index].name = inputValue;
             } else {
-                currentData.lists[activeList].items[index].name = inputValue;
+                state.currentData.lists[state.activeList].items[index].name = inputValue;
             }
-            saveData(currentData);
+            saveData(state.currentData);
             overlay.remove();
             if (type === 'list') {
                 listView();

@@ -1,5 +1,8 @@
 import { state } from '../utils/state.js';
 import { listItemView } from '../views/itemView.js';
+import { deleteFunction } from '../actions/deleteAction.js';
+import { editFunction } from '../actions/editAction.js';
+import { itemDoneFunction } from '../actions/itemActions.js';
 
 export function listClickCallback(action, index) {
     if (state.appState === 'listView') {

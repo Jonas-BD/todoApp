@@ -29,3 +29,9 @@ body {
     right: 20px;
     bottom: 20px;
 }
+
+.item-done {
+    text-decoration: line-through;
+    color: gray;
+    opacity: 1.8;
+}
